@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-fq2ra_ti3(!-2wu6@5@1dhyczdj%q545w3dgjmd5(x!)&l&!uk
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    "interviewkitplusapi.onrender.com
+    "interviewkitplusapi.onrender.com"
 ]
 
 
