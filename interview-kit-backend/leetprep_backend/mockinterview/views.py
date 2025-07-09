@@ -14,7 +14,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from .models import ResumeUpload
 from .serializers import ResumeUploadSerializer
-import fitz  # PyMuPDF
+
 
 @api_view(["POST"])
 @permission_classes([IsAuthenticated])
