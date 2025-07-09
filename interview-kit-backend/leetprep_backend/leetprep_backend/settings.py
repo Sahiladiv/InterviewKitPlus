@@ -23,9 +23,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-fq2ra_ti3(!-2wu6@5@1dhyczdj%q545w3dgjmd5(x!)&l&!uk'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "interviewkitplusapi.onrender.com
+]
 
 
 # Application definition
