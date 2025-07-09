@@ -1,0 +1,111 @@
+ID,Title,Difficulty,Category,Description,Input,Output,Example Input,Example Output
+1,Two Sum,Easy,Array,Return indices of the two numbers such that they add up to a specific target.,"List[int] nums, int target",List[int] indices,"nums = [2,7,11,15], target = 9","[0,1]"
+2,Add Two Numbers,Medium,Linked List,Add two non‑empty linked lists representing two non‑negative integers (digits stored in reverse order).,"ListNode l1, ListNode l2",ListNode sum,"l1 = 2→4→3, l2 = 5→6→4",7→0→8
+3,Longest Substring Without Repeating Characters,Medium,String,Find the length of the longest substring without repeating characters.,str s,int length,"s = ""abcabcbb""",3
+4,Median of Two Sorted Arrays,Hard,Array,Return the median of two sorted arrays with overall run time O(log(m+n)).,"List[int] nums1, List[int] nums2",float median,"nums1=[1,3], nums2=[2]",2.0
+5,Longest Palindromic Substring,Medium,String,Find the longest palindromic substring in a given string.,str s,str substring,"s=""babad""","""bab"""
+6,Zigzag Conversion,Medium,String,Write the string in a zigzag pattern on a given number of rows and read line by line.,"str s, int numRows",str converted,"s=""PAYPALISHIRING"", numRows=3","""PAHNAPLSIIGYIR"""
+7,Reverse Integer,Easy,Math,Reverse digits of a 32‑bit signed integer; return 0 on overflow.,int x,int reversed,x=123,321
+8,String to Integer (atoi),Medium,String,Convert a string to a 32‑bit signed integer similar to C/C++'s atoi.,str s,int value,"s=""42""",42
+9,Palindrome Number,Easy,Math,Determine whether an integer is a palindrome without extra space.,int x,bool isPalindrome,x=121,true
+10,Container With Most Water,Medium,Two Pointers,Find two lines that together with the x‑axis form a container holding the most water.,List[int] height,int maxArea,"height=[1,8,6,2,5,4,8,3,7]",49
+11,Integer to Roman,Medium,Math,Convert an integer to a Roman numeral.,int num,str roman,num=1994,"""MCMXCIV"""
+12,Roman to Integer,Easy,Math,Convert a Roman numeral to an integer.,str s,int num,"s=""LVIII""",58
+13,Longest Common Prefix,Easy,String,Find the longest common prefix string among an array of strings.,List[str] strs,str prefix,"[""flower"",""flow"",""flight""]","""fl"""
+14,3Sum,Medium,Array,Return all unique triplets that sum to zero.,List[int] nums,List[List[int]] triplets,"nums=[-1,0,1,2,-1,-4]","[[-1,-1,2],[-1,0,1]]"
+15,3Sum Closest,Medium,Array,Find a triplet whose sum is closest to the target.,"List[int] nums, int target",int closest,"nums=[-1,2,1,-4], target=1",2
+16,Letter Combinations of a Phone Number,Medium,Backtracking,Return all letter combinations that the digits 2‑9 could represent.,str digits,List[str] combos,"digits=""23""","[""ad"",""ae"",""af"",""bd"",""be"",""bf"",""cd"",""ce"",""cf""]"
+17,4Sum,Medium,Array,Return all unique quadruplets that sum to the target.,"List[int] nums, int target",List[List[int]] quadruplets,"nums=[1,0,-1,0,-2,2], target=0","[[-2,-1,1,2],[-2,0,0,2],[-1,0,0,1]]"
+18,Remove Nth Node From End of List,Medium,Linked List,Remove the nth node from the end of a singly linked list.,"ListNode head, int n",ListNode head,"head=1→2→3→4→5, n=2",1→2→3→5
+19,Valid Parentheses,Easy,Stack,Determine if the input string's parentheses are valid.,str s,bool isValid,"s=""()[]{}""",true
+20,Merge Two Sorted Lists,Easy,Linked List,Merge two sorted linked lists and return it as a new sorted list.,"ListNode l1, ListNode l2",ListNode merged,"l1=1→2→4, l2=1→3→4",1→1→2→3→4→4
+21,Generate Parentheses,Medium,Backtracking,Generate all combinations of well‑formed parentheses for n pairs.,int n,List[str] combinations,n=3,"[""((()))"",""(()())"",""(())()"",""()(())"",""()()()""]"
+22,Merge k Sorted Lists,Hard,Linked List,Merge k sorted linked lists and return one sorted list.,List[ListNode] lists,ListNode head,"[1→4→5, 1→3→4, 2→6]",1→1→2→3→4→4→5→6
+23,Swap Nodes in Pairs,Medium,Linked List,Swap every two adjacent nodes of a linked list.,ListNode head,ListNode head,1→2→3→4,2→1→4→3
+24,Reverse Nodes in k‑Group,Hard,Linked List,Reverse nodes of a linked list in groups of size k.,"ListNode head, int k",ListNode head,"1→2→3→4→5, k=2",2→1→4→3→5
+25,Remove Duplicates from Sorted Array,Easy,Array,Remove duplicates in‑place from a sorted array and return new length.,List[int] nums,int length,"nums=[1,1,2]","2 (nums=[1,2, …])"
+26,Remove Element,Easy,Array,Remove all instances of value in‑place and return new length.,"List[int] nums, int val",int length,"nums=[3,2,2,3], val=3","2 (nums=[2,2,…])"
+27,Implement strStr(),Easy,String,Return the index of the first occurrence of needle in haystack or -1.,"str haystack, str needle",int index,"haystack=""hello"", needle=""ll""",2
+28,Divide Two Integers,Medium,Math,"Divide two integers without using multiplication, division, or mod, handling overflow.","int dividend, int divisor",int quotient,"10,3",3
+29,Substring with Concatenation of All Words,Hard,String,Find starting indices where substring is concatenation of each word exactly once.,"str s, List[str] words",List[int] indices,"s=""barfoothefoobarman"", words=[""foo"",""bar""]","[0,9]"
+30,Next Permutation,Medium,Array,Rearrange numbers into the lexicographically next greater permutation.,List[int] nums,None (in‑place),"nums=[1,2,3]","[1,3,2]"
+31,Longest Valid Parentheses,Hard,Stack,Find length of the longest valid (well‑formed) parentheses substring.,str s,int length,"s="")()())""",4
+32,Search in Rotated Sorted Array,Medium,Binary Search,Search target in rotated sorted array in O(log n) time.,"List[int] nums, int target",int index,"nums=[4,5,6,7,0,1,2], target=0",4
+33,Find First and Last Position of Element in Sorted Array,Medium,Binary Search,Return starting and ending position of given target in sorted array.,"List[int] nums, int target",List[int] range,"nums=[5,7,7,8,8,10], target=8","[3,4]"
+34,Combination Sum,Medium,Backtracking,Find all unique combinations where candidates sum to target (unlimited reuse).,"List[int] candidates, int target",List[List[int]] combinations,"candidates=[2,3,6,7], target=7","[[2,2,3],[7]]"
+35,First Missing Positive,Hard,Array,"Find the smallest missing positive integer in O(n) time, O(1) space.",List[int] nums,int smallest,"nums=[1,2,0]",3
+36,Trapping Rain Water,Hard,Array,Compute how much water can be trapped after raining given elevation map.,List[int] height,int volume,"height=[0,1,0,2,1,0,1,3,2,1,2,1]",6
+37,Multiply Strings,Medium,Math,Multiply two non‑negative numbers represented as strings.,"str num1, str num2",str product,"num1=""2"", num2=""3""","""6"""
+38,Wildcard Matching,Hard,Dynamic Programming,Implement wildcard pattern matching with '?' and '*'.,"str s, str p",bool match,"s=""aa"", p=""a*""",true
+39,Jump Game,Medium,Greedy,Determine if you can reach the last index with jumps defined by array.,List[int] nums,bool canReach,"nums=[2,3,1,1,4]",true
+40,Permutations,Medium,Backtracking,Return all permutations of a list of numbers.,List[int] nums,List[List[int]] perms,"nums=[1,2,3]","[[1,2,3],…]"
+41,Rotate Image,Medium,Matrix,Rotate an n×n matrix 90 degrees clockwise in‑place.,List[List[int]] matrix,None (in‑place),"matrix=[[1,2],[3,4]]","[[3,1],[4,2]]"
+42,Group Anagrams,Medium,Hash Table,Group strings that are anagrams of each other.,List[str] strs,List[List[str]] groups,"strs=[""eat"",""tea"",""tan"",""ate"",""nat"",""bat""]","[[""eat"",""tea"",""ate""],[""tan"",""nat""],[""bat""]]"
+43,"Pow(x, n)",Medium,Recursion,"Implement pow(x, n) without library functions.","float x, int n",float result,"2.00000,-2",0.25
+44,Maximum Subarray,Easy,Dynamic Programming,Find contiguous subarray with the largest sum (Kadane's algorithm).,List[int] nums,int maxSum,"nums=[-2,1,-3,4,-1,2,1,-5,4]",6
+45,Spiral Matrix,Medium,Matrix,Return all elements of an m×n matrix in spiral order.,List[List[int]] matrix,List[int] order,"[[1,2,3],[4,5,6],[7,8,9]]","[1,2,3,6,9,8,7,4,5]"
+46,Jump Game II,Medium,Greedy,Return minimum number of jumps to reach the end.,List[int] nums,int jumps,"nums=[2,3,1,1,4]",2
+47,Permutations II,Medium,Backtracking,Return all unique permutations of numbers that may contain duplicates.,List[int] nums,List[List[int]] perms,"nums=[1,1,2]","[[1,1,2],[1,2,1],[2,1,1]]"
+48,Rotate Array,Medium,Array,Rotate array right by k steps in‑place.,"List[int] nums, int k",None (in‑place),"nums=[1,2,3,4,5,6,7], k=3","[5,6,7,1,2,3,4]"
+49,Unique Paths,Medium,Dynamic Programming,Count unique paths in m×n grid moving only right/down.,"int m, int n",int paths,"m=3, n=2",3
+50,Unique Paths II,Medium,Dynamic Programming,Count unique paths with obstacles in grid.,List[List[int]] obstacleGrid,int paths,"[[0,0,0],[0,1,0],[0,0,0]]",2
+51,Minimum Path Sum,Medium,Dynamic Programming,Find path with minimum sum from top‑left to bottom‑right of grid.,List[List[int]] grid,int minSum,"[[1,3,1],[1,5,1],[4,2,1]]",7
+52,Climbing Stairs,Easy,Dynamic Programming,You can climb 1 or 2 steps; how many distinct ways to reach the top?,int n,int ways,n=5,8
+53,Edit Distance,Hard,Dynamic Programming,Compute minimum operations to convert one word to another (Levenshtein distance).,"str word1, str word2",int distance,"word1=""horse"", word2=""ros""",3
+54,Set Matrix Zeroes,Medium,Matrix,"If an element is 0, set its entire row and column to 0 in‑place.",List[List[int]] matrix,None (in‑place),"[[1,1,1],[1,0,1],[1,1,1]]","[[1,0,1],[0,0,0],[1,0,1]]"
+55,Search a 2D Matrix,Medium,Binary Search,Treat m×n matrix as sorted array; search for target in O(log(mn)).,"List[List[int]] matrix, int target",bool found,"matrix=[[1,3,5,7],[10,11,16,20],[23,30,34,60]], target=3",true
+56,Sort Colors,Medium,Two Pointers,"Sort array of 0s,1s,2s (Dutch national flag) in one pass in‑place.",List[int] nums,None (in‑place),"[2,0,2,1,1,0]","[0,0,1,1,2,2]"
+57,Minimum Window Substring,Hard,Sliding Window,Find the smallest substring containing all characters of t.,"str s, str t",str window,"s=""ADOBECODEBANC"", t=""ABC""","""BANC"""
+58,Combination Sum II,Medium,Backtracking,Find all unique combinations where candidates sum to target; each number used once.,"List[int] candidates, int target",List[List[int]],"candidates=[10,1,2,7,6,1,5], target=8","[[1,1,6],[1,2,5],[1,7],[2,6]]"
+59,Word Search,Medium,Backtracking,Determine if the word exists in the grid by sequentially adjacent letters.,"List[List[str]] board, str word",bool exists,"board=[[""A"",""B"",""C"",""E""],[""S"",""F"",""C"",""S""],[""A"",""D"",""E"",""E""]], word=""ABCCED""",true
+60,Valid Sudoku,Medium,Hash Table,Determine if a 9×9 Sudoku is valid.,List[List[str]] board,bool valid,board has duplicates,false
+61,Solve Sudoku,Hard,Backtracking,Fill a 9×9 Sudoku board.,List[List[str]] board,None (board solved),Partially filled board,Solved board
+62,Maximum Product Subarray,Medium,Dynamic Programming,Find contiguous subarray within an array (containing at least one number) which has the largest product.,List[int] nums,int product,"nums=[2,3,-2,4]",6
+63,Find Minimum in Rotated Sorted Array,Medium,Binary Search,Find minimum element in rotated sorted array without duplicates.,List[int] nums,int min,"nums=[3,4,5,1,2]",1
+64,Search in Rotated Sorted Array II,Medium,Binary Search,Search target in rotated sorted array that may contain duplicates.,"List[int] nums, int target",bool found,"nums=[2,5,6,0,0,1,2], target=0",true
+65,Word Ladder,Hard,Graph,Return length of shortest transformation sequence from beginWord to endWord.,"str beginWord, str endWord, List[str] wordList",int steps,"""hit"",""cog"",[""hot"",""dot"",""dog"",""lot"",""log"",""cog""]",5
+66,Word Ladder II,Hard,Graph,Return all shortest transformation sequences.,"str beginWord, str endWord, List[str] wordList",List[List[str]],"""hit"",""cog"",[...same...]","[[""hit"",""hot"",""dot"",""dog"",""cog""], …]"
+67,Largest Rectangle in Histogram,Hard,Stack,Find area of largest rectangle in histogram.,List[int] heights,int area,"heights=[2,1,5,6,2,3]",10
+68,Maximal Rectangle,Hard,Stack,Find area of largest rectangle of 1s in binary matrix.,List[List[str]] matrix,int area,"matrix=[[""1"",""0"",""1"",""0"",""0""],[""1"",""0"",""1"",""1"",""1""],[""1"",""1"",""1"",""1"",""1""],[""1"",""0"",""0"",""1"",""0""]]",6
+69,Scramble String,Hard,String,Determine if s2 is a scrambled string of s1.,"str s1, str s2",bool scrambled,"s1=""great"", s2=""rgeat""",true
+70,Merge Intervals,Medium,Array,Merge all overlapping intervals.,List[List[int]] intervals,List[List[int]],"[[1,3],[2,6],[8,10],[15,18]]","[[1,6],[8,10],[15,18]]"
+71,Insert Interval,Medium,Array,Insert interval into sorted non‑overlapping intervals and merge if necessary.,"List[List[int]] intervals, List[int] newInterval",List[List[int]],"intervals=[[1,3],[6,9]], newInterval=[2,5]","[[1,5],[6,9]]"
+72,Length of Last Word,Easy,String,Return length of last word in a string.,str s,int length,"s=""Hello World""",5
+73,Spiral Matrix II,Medium,Matrix,Generate n×n matrix filled with elements 1…n² in spiral order.,int n,List[List[int]] matrix,n=3,"[[1,2,3],[8,9,4],[7,6,5]]"
+74,Plus One,Easy,Array,"Given a non‑negative integer represented by digits array, increment by one.",List[int] digits,List[int] digits,"digits=[1,2,3]","[1,2,4]"
+75,Add Binary,Easy,String,Add two binary strings.,"str a, str b",str sum,"a=""11"", b=""1""","""100"""
+76,Add Strings,Easy,Math,Add two non‑negative numbers represented as decimal strings.,"str num1, str num2",str sum,"num1=""456"", num2=""77""","""533"""
+77,Sqrt(x),Easy,Math,Compute integer square root (floor).,int x,int sqrt,x=8,2
+78,Decode Ways,Medium,Dynamic Programming,Count ways to decode digits to letters (A=1..Z=26).,str s,int ways,"s=""226""",3
+79,Binary Tree Inorder Traversal,Easy,Tree,Return inorder traversal of a binary tree.,TreeNode root,List[int] traversal,"root=[1,null,2,3]","[1,3,2]"
+80,Binary Tree Preorder Traversal,Easy,Tree,Return preorder traversal of a binary tree.,TreeNode root,List[int],"root=[1,null,2,3]","[1,2,3]"
+81,Binary Tree Postorder Traversal,Easy,Tree,Return postorder traversal of a binary tree.,TreeNode root,List[int],"root=[1,null,2,3]","[3,2,1]"
+82,Binary Tree Level Order Traversal,Medium,Tree,Return level order traversal of a binary tree.,TreeNode root,List[List[int]],"root=[3,9,20,null,null,15,7]","[[3],[9,20],[15,7]]"
+83,Validate Binary Search Tree,Medium,Tree,Check if a binary tree is a valid BST.,TreeNode root,bool isBST,root invalid,false
+84,Symmetric Tree,Easy,Tree,Check if a binary tree is symmetric (mirror) around its center.,TreeNode root,bool symmetric,root symmetric,true
+85,Construct Binary Tree from Preorder and Inorder Traversal,Medium,Tree,Build binary tree given preorder and inorder traversal.,"List[int] preorder, List[int] inorder",TreeNode root,"pre=[3,9,20,15,7], in=[9,3,15,20,7]",root tree
+86,Convert Sorted Array to BST,Easy,Tree,Convert sorted array to height‑balanced BST.,List[int] nums,TreeNode root,"nums=[-10,-3,0,5,9]",root
+87,Maximum Depth of Binary Tree,Easy,Tree,Return the maximum depth of a binary tree.,TreeNode root,int depth,root depth,3
+88,Balanced Binary Tree,Easy,Tree,Check if a binary tree is height balanced.,TreeNode root,bool balanced,root balanced,true
+89,Minimum Depth of Binary Tree,Easy,Tree,Return minimum depth of binary tree.,TreeNode root,int depth,root,2
+90,Path Sum,Easy,Tree,Determine if tree has root‑to‑leaf path equal to given sum.,"TreeNode root, int sum",bool exists,sum path,true
+91,Path Sum II,Medium,Tree,Return all root‑to‑leaf paths summing to target.,"TreeNode root, int sum",List[List[int]],sum paths,"[[5,4,11,2],[5,8,4,5]]"
+92,Sum Root to Leaf Numbers,Medium,Tree,Each root‑to‑leaf path forms a number; return total sum.,TreeNode root,int total,root,1026
+93,Binary Tree Maximum Path Sum,Hard,Tree,Return maximum path sum of any non‑empty path.,TreeNode root,int maxSum,root,42
+94,Same Tree,Easy,Tree,Check if two binary trees are identical.,"TreeNode p, TreeNode q",bool same,trees same,true
+95,Flatten Binary Tree to Linked List,Medium,Tree,Flatten binary tree to linked list in preorder in‑place.,TreeNode root,None (in‑place),root,flattened
+96,Populating Next Right Pointers in Each Node,Medium,Tree,Populate each next pointer to its right neighbor in perfect binary tree.,TreeNode root,TreeNode root,root,populated
+97,Lowest Common Ancestor of a BST,Easy,Tree,Find LCA of two nodes in a BST.,"TreeNode root, TreeNode p, TreeNode q",TreeNode lca,"root, p=2, q=8",3
+98,Serialize and Deserialize Binary Tree,Hard,Tree,Design algorithm to serialize and deserialize a binary tree.,TreeNode root,str data / TreeNode root,root,serialized+deserialized
+99,Course Schedule,Medium,Graph,Detect if you can finish all courses given prerequisites (cycle detection).,"int numCourses, List[List[int]] prerequisites",bool possible,"num=2, prereq=[[1,0]]",true
+100,Course Schedule II,Medium,Graph,"Return course order to finish all courses, or empty if impossible.","int numCourses, List[List[int]] prerequisites",List[int] order,"num=2, prereq=[[1,0]]","[0,1]"
+101,Number of Islands,Medium,Graph,Count islands (connected components) in a 2D grid of '1's and '0's.,List[List[str]] grid,int islands,"grid=[[""1"",""1"",""0"",""0"",""0""],[""1"",""1"",""0"",""0"",""0""],[""0"",""0"",""1"",""0"",""0""],[""0"",""0"",""0"",""1"",""1""]]",3
+102,Clone Graph,Medium,Graph,Clone an undirected connected graph.,Node node,Node clonedGraph,adjacency list,cloned
+103,Implement Trie (Prefix Tree),Medium,Design,"Implement Trie with insert, search, and startsWith operations.",None,Class Trie,operations,correct
+104,LRU Cache,Medium,Design,Design a data structure that follows LRU eviction policy.,int capacity,Class LRUCache,operations,correct
+105,Min Stack,Easy,Design,"Design a stack that supports push, pop, top, and retrieving the minimum in constant time.",None,Class MinStack,operations,correct
+106,Kth Largest Element in an Array,Medium,Heap,Find the kth largest element without sorting the entire array.,"List[int] nums, int k",int value,"nums=[3,2,1,5,6,4], k=2",5
+107,Top K Frequent Elements,Medium,Heap,Return k most frequent elements.,"List[int] nums, int k",List[int] topK,"nums=[1,1,1,2,2,3], k=2","[1,2]"
+108,Find K Closest Elements,Medium,Two Pointers,Return k closest integers to x in sorted array.,"List[int] arr, int k, int x",List[int] result,"arr=[1,2,3,4,5], k=4, x=3","[1,2,3,4]"
+109,Meeting Rooms II,Medium,Heap,Return minimum number of conference rooms required.,List[List[int]] intervals,int rooms,"intervals=[[0,30],[5,10],[15,20]]",2
+110,Task Scheduler,Medium,Greedy,"Given tasks represented by chars and cooling interval n, return least intervals.","List[str] tasks, int n",int intervals,"tasks=[""A"",""A"",""A"",""B"",""B"",""B""], n=2",8
