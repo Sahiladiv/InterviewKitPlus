@@ -27,8 +27,8 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
     "interviewkitplusapi.onrender.com",
-    'localhost',
-    'http://127.0.0.1:8000/'
+    # 'localhost',
+    # 'http://127.0.0.1:8000/'
 ]
 
 

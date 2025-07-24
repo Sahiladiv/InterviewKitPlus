@@ -6,7 +6,7 @@ from .coding_question_generator import generate_question_with_llm
 import json
 
 @api_view(["GET"])
-@permission_classes([IsAuthenticated])
+# @permission_classes([IsAuthenticated])
 def get_question(request):
     print("Hello")
     try:
