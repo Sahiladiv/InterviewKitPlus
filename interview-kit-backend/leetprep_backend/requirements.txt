@@ -27,3 +27,4 @@ dotenv
 #LangChain
 langchain
 openai
+langchain_community
