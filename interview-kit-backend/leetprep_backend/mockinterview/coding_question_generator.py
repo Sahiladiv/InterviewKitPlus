@@ -1,10 +1,16 @@
-import random
+import os
+import re
 import json
-from langchain.chat_models import ChatOpenAI
-from langchain.schema import SystemMessage, HumanMessage
+import random
+from typing import Tuple, Dict, Any
+
 from dotenv import load_dotenv
 
-load_dotenv()
+from langchain_openai import ChatOpenAI
+from langchain.schema import SystemMessage, HumanMessage
+
+load_dotenv()  # loads .env into os.environ
+
 
 PROMPT_LIST = [
     "Create an array-based coding problem involving prefix sums or sliding window. Provide clear I/O formats, constraints, and 3 test cases.",
@@ -26,18 +32,52 @@ PROMPT_LIST = [
     "Write a problem involving range queries using segment tree or BIT. Include constraints and 3 sample test cases."
 ]
 
-def get_random_prompt():
+
+def get_random_prompt() -> str:
     return random.choice(PROMPT_LIST)
 
-def generate_question_with_llm():
-    llm = ChatOpenAI(temperature=0.7, model="gpt-4")
-    
+
+def _ensure_api_key() -> str:
+    api_key = os.getenv("OPENAI_API_KEY")
+    if not api_key:
+        raise ValueError(
+            "Did not find OPENAI_API_KEY. Put it in your environment or in a .env file.\n"
+            "Example .env:\nOPENAI_API_KEY=sk-..."
+        )
+    return api_key
+
+
+def _coerce_to_json_block(txt: str) -> str:
+    """
+    If the model wrapped JSON in ```json ... ``` or ``` ... ```,
+    extract just the JSON part.
+    """
+    fenced = re.search(r"```(?:json)?\s*(\{.*?\})\s*```", txt, flags=re.S)
+    if fenced:
+        return fenced.group(1)
+    return txt
+
+
+def generate_question_with_llm(model: str = "gpt-4o-mini") -> Tuple[str, Dict[str, Any], str]:
+    """
+    Returns:
+        raw_output: str       - whatever the LLM returned
+        parsed: dict          - parsed JSON ({} if it failed)
+        selected_prompt: str  - the prompt that was used
+    Raises:
+        ValueError if OPENAI_API_KEY missing.
+    """
+    _ensure_api_key()  # fail fast if key is missing
+
+    llm = ChatOpenAI(model=model, temperature=0.7)
+
     selected_prompt = get_random_prompt()
-    
+
     system_prompt = SystemMessage(
         content=(
             f"You are a technical interviewer.\n{selected_prompt}\n"
-            "Generate a medium-difficulty coding problem. Include: title, problem statement, input format, output format, constraints, 3 sample test cases, and tags. Return as JSON. \n"
+            "Generate a medium-difficulty coding problem. Include: title, problem statement, input format, "
+            "output format, constraints, 3 sample test cases, and tags. Return as JSON.\n"
             "Respond strictly in this JSON format:\n"
             "{\n"
             "  \"title\": str,\n"
@@ -53,6 +93,27 @@ def generate_question_with_llm():
 
     user_prompt = HumanMessage(content="Generate the question now.")
 
+    # Newer LCEL style would use llm.invoke([...]); this still works with the older call signature
     response = llm([system_prompt, user_prompt])
-    print(response.content, selected_prompt)
-    return response.content, selected_prompt
+    raw_output = response.content
+    print("LLM raw output:\n", raw_output)  # for console debugging
+    print("Prompt used:", selected_prompt)
+
+    # Try to parse
+    parsed: Dict[str, Any] = {}
+    try:
+        cleaned = _coerce_to_json_block(raw_output)
+        parsed = json.loads(cleaned)
+    except Exception as e:
+        print("WARNING: Could not parse JSON from model output:", e)
+
+    return raw_output, parsed, selected_prompt
+
+
+if __name__ == "__main__":
+    raw, parsed, prompt_used = generate_question_with_llm()
+    if parsed:
+        print(json.dumps(parsed, indent=2))
+    else:
+        print("\n---- RAW (unparsed) ----\n", raw)
+    print("\nPrompt used:", prompt_used)
