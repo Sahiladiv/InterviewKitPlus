@@ -28,3 +28,7 @@ dotenv
 langchain
 openai
 langchain_community
+
+
+#For hidden keys
+python-dotenv
