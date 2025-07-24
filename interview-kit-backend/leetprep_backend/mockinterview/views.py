@@ -7,14 +7,17 @@ import json
 
 @api_view(["GET"])
 # @permission_classes([IsAuthenticated])
+
 def get_question(request):
     print("Hello")
     try:
-        raw_output, prompt_used = generate_question_with_llm()
-        data = json.loads(raw_output)  # Try parsing the model output
+        raw_output, parsed, prompt_used = generate_question_with_llm()
+
+        if not parsed:
+            return Response({"error": "LLM output could not be parsed to JSON"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
         return Response({
-            "question": data,
+            "question": parsed,
             "prompt_used": prompt_used
         }, status=status.HTTP_200_OK)
 
